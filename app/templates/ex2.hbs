@@ -1,0 +1,38 @@
+{{page-title 'Ex2'}}
+{{outlet}}
+
+<form class="img-rounded">
+  <h1>Services</h1>
+  <div class="alert alert-info">
+    <span>Choisissez les éléments à inclure</span>
+    <p>
+      <h2>{{plural @model.countActive "Aucun service sélectionné" "1 service selectionné" "services sélectionnés"}} </h2>
+    </p>
+  </div>
+  <ul>
+
+    {{#each @model.products as |product|}}
+      <li class="list-group-item {{if product.active "active"}}" {{action "toggleActive" product}}>
+        {{product.name}}   {{format-currency product.price "$"}}
+      </li>
+    {{/each}}
+
+  </ul>
+
+  <div class="total">
+    Total: <span>{{format-currency @model.sumActive "$"}}</span>
+  </div>
+
+  <div>
+    <div class="input-group">
+        <span class="input-group-addon">
+          <input type="checkbox">
+        </span>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="total">
+    Remise :<span ></span><span></span><br>
+    Total avec remise :<span></span>
+  </div>
+</form>
