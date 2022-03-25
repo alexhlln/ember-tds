@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'td-eval',
+    modulePrefix: 'tds',
     environment,
     rootURL: '/',
     locationType: 'history',
