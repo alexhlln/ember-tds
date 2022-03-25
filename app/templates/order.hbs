@@ -1,2 +1,35 @@
-{{page-title "Order"}}
+{{page-title "Store"}}
+<div class='ui black segment'>
+  {{@model.user.name}}
+</div>
+
+{{@model.dateCreation}}
+
+<table>
+  <tr>
+    <td>Produit</td>
+    <td>Quantité</td>
+    <td>Prix</td>
+    <td>Montant</td>
+    <td>Préparation</td>
+  </tr>
+  {{#each @model.orderdetails as |orderdetail|}}
+    <tr>
+      <td>{{orderdetail.product.name}}</td>
+      <td>{{orderdetail.quantity}}</td>
+      <td>{{orderdetail.quantity}}</td>
+      <td>{{orderdetail.quantity}}</td>
+      <td>{{orderdetail.quantity}}</td>
+    </tr>
+  {{/each}}
+</table>
+
+
+<ul>
+  {{#each @model.orderdetails as |orderdetail|}}
+    <li>
+      {{orderdetail.quantity}}
+    </li>
+  {{/each}}
+</ul>
 {{outlet}}
